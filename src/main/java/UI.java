@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
@@ -42,6 +44,94 @@ public class UI {
         }
     }
 
+    public void displayBalance() {
+        System.out.println("Current balance is: " + manager.getBalance());
+    }
+
+    public void addTransaction() {
+        System.out.print("Please enter amount: ");
+        double amount = getDoubleInput();
+
+        TransactionType type = getTransactionType();
+
+        System.out.print("Please enter a description");
+        String description = scanner.nextLine();
+
+        LocalDate date = getDateInput();
+
+        Transaction transaction = new Transaction(amount, description, date, type);
+
+        manager.addTransaction(transaction);
+    }
+
+    public void removeTransaction() {
+        System.out.print("Please enter ID of transaction to remove: ");
+        int id = getIntInput();
+
+        boolean removed = manager.removeTransaction(id);
+
+        if (removed) {
+            System.out.println("Transaction removed.");
+        } else {
+            System.out.println("Transaction not found.");
+        }
+    }
+
+    public void displayTransactions() {
+        ArrayList<Transaction> transactions = manager.getTransactions();
+
+        if (transactions.isEmpty()) {
+            System.out.println("No transactions found.");
+            return;
+        }
+
+        for (Transaction transaction : transactions) {
+            System.out.println(
+                    "ID: " + transaction.getId() +
+                    ", Type: " + transaction.getType() +
+                    ", Amount: " + transaction.getAmount() +
+                    ", Description: " + transaction.getCategory() +
+                    ", Date: " + transaction.getDate());
+        }
+    }
+
+    public void displayTotalIncome() {
+        System.out.println("Total income: " + manager.getTotalIncome());
+    }
+
+    public void displayTotalExpense() {
+        System.out.println("Total expense: " + manager.getTotalExpense());
+    }
+
+    public void exit() {
+        System.out.println("Goodbye");
+        System.exit(0);
+    }
+
+    public TransactionType getTransactionType() {
+        while(true) {
+            System.out.println("Please choose one of the following options: ");
+            System.out.println("1. Income");
+            System.out.println("2. Expense");
+
+            try {
+                 int input = Integer.parseInt(scanner.nextLine());
+
+                 switch (input) {
+                     case 1 -> {
+                         return TransactionType.INCOME;
+                     }
+                     case 2 -> {
+                         return TransactionType.EXPENSE;
+                     }
+                     default -> System.out.println("Please choose a valid option.");
+                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
+            }
+        }
+    }
+
     public int getIntInput() {
         int input;
         while(true) {
@@ -60,6 +150,17 @@ public class UI {
                 return Double.parseDouble(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number.");
+            }
+        }
+    }
+
+    public LocalDate getDateInput() {
+        while(true) {
+            try {
+                System.out.print("Please enter date (YYYY-MM-DD): ");
+                return LocalDate.parse(scanner.nextLine());
+            } catch (Exception e) {
+                System.out.println("Please enter a valid date");
             }
         }
     }

@@ -30,7 +30,7 @@ public class FinanceManager {
         return (startingBalance + getTotalIncome() - getTotalExpense());
     }
 
-    public List<Transaction> getTransactions() {
+    public ArrayList<Transaction> getTransactions() {
         return new ArrayList<>(transactions);
     }
 
