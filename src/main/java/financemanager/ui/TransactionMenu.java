@@ -1,7 +1,7 @@
 package financemanager.ui;
 
 import financemanager.enums.TransactionType;
-import financemanager.filter.InputValidator;
+import financemanager.utility.InputValidator;
 import financemanager.model.Transaction;
 import financemanager.service.TransactionManager;
 

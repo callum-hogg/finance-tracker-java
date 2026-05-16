@@ -1,4 +1,4 @@
-package financemanager.filter;
+package financemanager.utility;
 
 import java.time.LocalDate;
 import java.util.Scanner;
