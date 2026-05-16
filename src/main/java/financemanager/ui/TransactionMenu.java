@@ -1,6 +1,7 @@
 package financemanager.ui;
 
 import financemanager.enums.TransactionType;
+import financemanager.filter.InputValidator;
 import financemanager.model.Transaction;
 import financemanager.service.TransactionManager;
 
@@ -77,9 +78,9 @@ public class TransactionMenu {
         boolean removed = manager.removeTransaction(id);
 
         if (removed) {
-            System.out.println("financemanager.model.Transaction removed.");
+            System.out.println("Transaction removed.");
         } else {
-            System.out.println("financemanager.model.Transaction not found.");
+            System.out.println("Transaction not found.");
         }
     }
 
@@ -120,54 +121,29 @@ public class TransactionMenu {
             System.out.println("1. Income");
             System.out.println("2. Expense");
 
-            try {
-                 int input = Integer.parseInt(scanner.nextLine());
+            int input = InputValidator.getValidInt(scanner);
 
-                 switch (input) {
-                     case 1 -> {
-                         return TransactionType.INCOME;
-                     }
-                     case 2 -> {
-                         return TransactionType.EXPENSE;
-                     }
-                     default -> System.out.println("Please choose a valid option.");
-                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
+            switch (input) {
+                case 1 -> {
+                    return TransactionType.INCOME;
+                }
+                case 2 -> {
+                    return TransactionType.EXPENSE;
+                }
+                default -> System.out.println("Please choose a valid option.");
             }
         }
     }
 
     public int getIntInput() {
-        int input;
-        while(true) {
-            try {
-                input = Integer.parseInt(scanner.nextLine());
-                return input;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
-            }
-        }
+        return InputValidator.getValidInt(scanner);
     }
 
     public double getDoubleInput() {
-        while(true) {
-            try {
-                return Double.parseDouble(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
-            }
-        }
+        return InputValidator.getValidDouble(scanner);
     }
 
     public LocalDate getDateInput() {
-        while(true) {
-            try {
-                System.out.print("Please enter date (YYYY-MM-DD): ");
-                return LocalDate.parse(scanner.nextLine());
-            } catch (Exception e) {
-                System.out.println("Please enter a valid date");
-            }
-        }
+        return InputValidator.getValidDate(scanner);
     }
 }
