@@ -1,12 +1,18 @@
+package financemanager.ui;
+
+import financemanager.enums.TransactionType;
+import financemanager.model.Transaction;
+import financemanager.service.TransactionManager;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class UI {
-    private FinanceManager manager;
+public class TransactionMenu {
+    private TransactionManager manager;
     private Scanner scanner;
 
-    public UI() {
+    public TransactionMenu() {
         scanner = new Scanner(System.in);
     }
 
@@ -14,7 +20,7 @@ public class UI {
         System.out.println("Welcome to the Finance Tracker!");
         System.out.print("Please enter the starting balance: ");
         double startingBalance = getDoubleInput();
-        manager = new FinanceManager(startingBalance);
+        manager = new TransactionManager(startingBalance);
         runMenu();
     }
 
@@ -22,8 +28,8 @@ public class UI {
         while(true) {
             System.out.println("Please choose one of the following options: ");
             System.out.println("1. View Balance");
-            System.out.println("2. Add Transaction");
-            System.out.println("3. Remove Transaction");
+            System.out.println("2. Add financemanager.model.Transaction");
+            System.out.println("3. Remove financemanager.model.Transaction");
             System.out.println("4. View Transactions");
             System.out.println("5. View Total Income");
             System.out.println("6. View Total Expense");
@@ -71,9 +77,9 @@ public class UI {
         boolean removed = manager.removeTransaction(id);
 
         if (removed) {
-            System.out.println("Transaction removed.");
+            System.out.println("financemanager.model.Transaction removed.");
         } else {
-            System.out.println("Transaction not found.");
+            System.out.println("financemanager.model.Transaction not found.");
         }
     }
 

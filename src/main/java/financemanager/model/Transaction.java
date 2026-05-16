@@ -1,3 +1,7 @@
+package financemanager.model;
+
+import financemanager.enums.TransactionType;
+
 import java.time.LocalDate;
 
 public class Transaction {
@@ -19,7 +23,7 @@ public class Transaction {
         this.id = nextId++;
     }
 
-    //Getters for Transaction fields
+    //Getters for financemanager.model.Transaction fields
     public double getAmount() {
         return amount;
     }

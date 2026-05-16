@@ -1,14 +1,19 @@
+package financemanager.service;
+
+import financemanager.enums.TransactionType;
+import financemanager.model.Transaction;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class FinanceManager {
+public class TransactionManager {
     //Declare required fields
     private List<Transaction> transactions;
     private double startingBalance;
     private double balance;
 
     //Constructor for FinanceManager
-    public FinanceManager(double startingBalance) {
+    public TransactionManager(double startingBalance) {
         this.startingBalance = startingBalance;
         this.balance = startingBalance;
         this.transactions = new ArrayList<>();
