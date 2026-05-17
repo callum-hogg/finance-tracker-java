@@ -109,7 +109,7 @@ public class TransactionMenu {
     }
 
     public void displayTotalExpense() {
-        System.out.println("Total expense: " + manager.getTotalAccountExpense());
+        System.out.println("Total expense: " + manager.getAccountExpense());
     }
 
     public void exit() {
