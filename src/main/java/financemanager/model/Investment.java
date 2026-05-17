@@ -16,7 +16,7 @@ public class Investment {
     private double currentPrice;
     private LocalDate purchaseDate;
 
-    public Investment(InvestmentType type, String name, String identifier, double numberOfShares, double purchasePrice, LocalDate purchaseDate) {
+    public Investment(InvestmentType type, String name, String identifier, double numberOfShares, double purchasePrice, double currentPrice, LocalDate purchaseDate) {
         this.id = nextID++;
         this.type = type;
         this.name = name;
@@ -24,6 +24,7 @@ public class Investment {
         this.numberOfShares = numberOfShares;
         this.purchasePrice = purchasePrice;
         this.purchaseDate = purchaseDate;
+        this.currentPrice = currentPrice;
     }
 
     public double getNumberOfShares() {
@@ -56,6 +57,10 @@ public class Investment {
 
     public String getName() {
         return name;
+    }
+
+    public double getValue() {
+        return numberOfShares * currentPrice;
     }
 
     public void setNumberOfShares(double numberOfShares) {

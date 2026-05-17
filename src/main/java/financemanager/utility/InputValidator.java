@@ -32,7 +32,7 @@ public class InputValidator {
                 System.out.print("Please enter date (YYYY-MM-DD): ");
                 return LocalDate.parse(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
+                System.out.println("Please enter a valid date.");
             }
         }
     }

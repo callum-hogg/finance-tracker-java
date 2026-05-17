@@ -1,5 +1,6 @@
 package financemanager.ui;
 
+import financemanager.enums.FinanceAccountType;
 import financemanager.enums.TransactionType;
 import financemanager.utility.InputValidator;
 import financemanager.model.Transaction;
@@ -19,9 +20,10 @@ public class TransactionMenu {
 
     public void start() {
         System.out.println("Welcome to the Finance Tracker!");
+        FinanceAccountType accountType = getAccountType();
         System.out.print("Please enter the starting balance: ");
         double startingBalance = getDoubleInput();
-        manager = new FinanceAccount(startingBalance);
+        manager = new FinanceAccount(accountType, startingBalance);
         runMenu();
     }
 
@@ -29,8 +31,8 @@ public class TransactionMenu {
         while(true) {
             System.out.println("Please choose one of the following options: ");
             System.out.println("1. View Balance");
-            System.out.println("2. Add financemanager.model.Transaction");
-            System.out.println("3. Remove financemanager.model.Transaction");
+            System.out.println("2. Add Transaction");
+            System.out.println("3. Remove Transaction");
             System.out.println("4. View Transactions");
             System.out.println("5. View Total Income");
             System.out.println("6. View Total Expense");
@@ -103,11 +105,11 @@ public class TransactionMenu {
     }
 
     public void displayTotalIncome() {
-        System.out.println("Total income: " + manager.getTotalIncome());
+        System.out.println("Total income: " + manager.getAccountIncome());
     }
 
     public void displayTotalExpense() {
-        System.out.println("Total expense: " + manager.getTotalExpense());
+        System.out.println("Total expense: " + manager.getTotalAccountExpense());
     }
 
     public void exit() {
@@ -129,6 +131,26 @@ public class TransactionMenu {
                 }
                 case 2 -> {
                     return TransactionType.EXPENSE;
+                }
+                default -> System.out.println("Please choose a valid option.");
+            }
+        }
+    }
+
+    public FinanceAccountType getAccountType() {
+        while(true) {
+            System.out.println("Please choose one of the following options: ");
+            System.out.println("1. Current Account");
+            System.out.println("2. Savings Account");
+
+            int input = InputValidator.getValidInt(scanner);
+
+            switch (input) {
+                case 1 -> {
+                    return FinanceAccountType.CURRENT_ACCOUNT;
+                }
+                case 2 -> {
+                    return FinanceAccountType.SAVINGS_ACCOUNT;
                 }
                 default -> System.out.println("Please choose a valid option.");
             }

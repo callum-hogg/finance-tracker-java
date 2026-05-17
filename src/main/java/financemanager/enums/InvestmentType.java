@@ -4,5 +4,4 @@ public enum InvestmentType {
     STOCK,
     ETF,
     FUND,
-    SAVING_ACCOUNT
 }

@@ -1,5 +1,6 @@
 package financemanager.model;
 
+import financemanager.enums.FinanceAccountType;
 import financemanager.enums.TransactionType;
 
 import java.util.ArrayList;
@@ -12,13 +13,33 @@ public class FinanceAccount {
     private List<Transaction> transactions;
     private double startingBalance;
     private double balance;
+    private FinanceAccountType accountType;
 
     //Constructor for FinanceManager
-    public FinanceAccount(double startingBalance) {
+    public FinanceAccount(FinanceAccountType accountType, double startingBalance) {
         this.id = nextID++;
         this.startingBalance = startingBalance;
         this.balance = startingBalance;
         this.transactions = new ArrayList<>();
+        this.accountType = accountType;
+    }
+
+    //Getters for FinanceManager fields
+
+    public int getId() {
+        return id;
+    }
+
+    public FinanceAccountType getAccountType() {
+        return accountType;
+    }
+
+    public double getBalance() {
+        return (startingBalance + getAccountIncome() - getAccountExpense());
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return new ArrayList<>(transactions);
     }
 
     //Method to add a transaction
@@ -32,25 +53,11 @@ public class FinanceAccount {
         }
     }
 
-    //Getters for FinanceManager fields
-
-    public int getId() {
-        return id;
-    }
-
-    public double getBalance() {
-        return (startingBalance + getTotalIncome() - getTotalExpense());
-    }
-
-    public ArrayList<Transaction> getTransactions() {
-        return new ArrayList<>(transactions);
-    }
-
     public boolean removeTransaction(int id) {
         return transactions.removeIf(t -> t.getId() == id);
     }
 
-    public double getTotalIncome() {
+    public double getAccountIncome() {
         double totalIncome = 0;
         for (Transaction transaction : transactions) {
             if (transaction.getType() == TransactionType.INCOME) {
@@ -60,7 +67,7 @@ public class FinanceAccount {
         return totalIncome;
     }
 
-    public double getTotalExpense() {
+    public double getAccountExpense() {
         double totalExpense = 0;
         for (Transaction transaction : transactions) {
             if (transaction.getType() == TransactionType.EXPENSE) {

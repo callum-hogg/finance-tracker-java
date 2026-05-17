@@ -7,9 +7,10 @@ import java.util.List;
 
 public class FinanceAccountManager {
 
-    private final List<FinanceAccount> accounts = new ArrayList<>();
+    private List<FinanceAccount> accounts;
 
     public FinanceAccountManager() {
+        this.accounts = new ArrayList<>();
     }
 
     public void addAccount(FinanceAccount account) {
