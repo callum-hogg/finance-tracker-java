@@ -58,10 +58,6 @@ public class Investment {
         return name;
     }
 
-    public void setCurrentPrice(double currentPrice) {
-        this.currentPrice = currentPrice;
-    }
-
     public void setNumberOfShares(double numberOfShares) {
         this.numberOfShares = numberOfShares;
     }

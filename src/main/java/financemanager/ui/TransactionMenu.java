@@ -3,14 +3,14 @@ package financemanager.ui;
 import financemanager.enums.TransactionType;
 import financemanager.utility.InputValidator;
 import financemanager.model.Transaction;
-import financemanager.service.TransactionManager;
+import financemanager.model.FinanceAccount;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TransactionMenu {
-    private TransactionManager manager;
+    private FinanceAccount manager;
     private Scanner scanner;
 
     public TransactionMenu() {
@@ -21,7 +21,7 @@ public class TransactionMenu {
         System.out.println("Welcome to the Finance Tracker!");
         System.out.print("Please enter the starting balance: ");
         double startingBalance = getDoubleInput();
-        manager = new TransactionManager(startingBalance);
+        manager = new FinanceAccount(startingBalance);
         runMenu();
     }
 
