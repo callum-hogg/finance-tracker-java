@@ -43,4 +43,20 @@ public class Transaction {
     public int getId() {
         return id;
     }
+
+    public void setType(TransactionType type) {
+        this.type = type;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 }
