@@ -3,20 +3,29 @@ package financemanager.model;
 import financemanager.enums.LiabilityType;
 
 public class Liability {
+    private static int nextId = 1;
+    private int id;
     private LiabilityType type;
     private String description;
-    private double value;
+    private double initialValue;
+    private double remainingValue;
     private double interest;
     private double monthlyPayments;
     private int monthsLeft;
 
-    public Liability(LiabilityType type, String description, double value, double interest, double monthlyPayments, int monthsLeft) {
+    public Liability(LiabilityType type, String description, double initialValue, double remainingValue, double interest, double monthlyPayments, int monthsLeft) {
+        this.id = nextId++;
         this.type = type;
         this.description = description;
-        this.value = value;
+        this.initialValue = initialValue;
+        this.remainingValue = remainingValue;
         this.interest = interest;
         this.monthlyPayments = monthlyPayments;
         this.monthsLeft = monthsLeft;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getDescription() {
@@ -59,11 +68,19 @@ public class Liability {
         this.type = type;
     }
 
-    public double getValue() {
-        return value;
+    public double getInitialValue() {
+        return initialValue;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setInitialValue(double initialValue) {
+        this.initialValue = initialValue;
+    }
+
+    public double getRemainingValue() {
+        return remainingValue;
+    }
+
+    public void setRemainingValue(double remainingValue) {
+        this.remainingValue = remainingValue;
     }
 }
