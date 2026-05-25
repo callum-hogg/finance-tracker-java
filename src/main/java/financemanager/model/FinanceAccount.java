@@ -10,14 +10,16 @@ public class FinanceAccount {
     //Declare required fields
     private static int nextID = 1;
     private int id;
+    private String name;
     private List<Transaction> transactions;
     private double startingBalance;
     private double balance;
     private FinanceAccountType accountType;
 
     //Constructor for FinanceManager
-    public FinanceAccount(FinanceAccountType accountType, double startingBalance) {
+    public FinanceAccount(String name, FinanceAccountType accountType, double startingBalance) {
         this.id = nextID++;
+        this.name = name;
         this.startingBalance = startingBalance;
         this.balance = startingBalance;
         this.transactions = new ArrayList<>();
@@ -28,6 +30,10 @@ public class FinanceAccount {
 
     public int getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public FinanceAccountType getAccountType() {
