@@ -15,5 +15,6 @@ public class Main {
         InvestmentAccountManager investmentManager = new InvestmentAccountManager();
         AssetLiabilityManager assetManager = new AssetLiabilityManager();
         MainMenu mainMenu = new MainMenu(scanner, financeManager, investmentManager, assetManager);
+        mainMenu.start();
     }
 }

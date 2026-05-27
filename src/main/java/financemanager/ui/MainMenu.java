@@ -17,11 +17,9 @@ public class MainMenu extends Menu {
         super(scanner);
 
         this.transactionMenu = new TransactionMenu(scanner, financeManager);
-        this.investmentMenu = new InvestmentMenu();
-        this.assetLiabilityMenu = new AssetLiabilityMenu();
-        this.analyticsMenu = new AnalyticsMenu();
-
-        start();
+        this.investmentMenu = new InvestmentMenu(scanner, investmentManager);
+        this.assetLiabilityMenu = new AssetLiabilityMenu(scanner, assetManager);
+        this.analyticsMenu = new AnalyticsMenu(scanner, financeManager, investmentManager, assetManager);
     }
 
     public void start() {
@@ -35,7 +33,21 @@ public class MainMenu extends Menu {
             System.out.println("4. Analytics");
             System.out.println("9. Exit");
 
+            int input = getIntInput();
 
+            switch(input) {
+
+                case 1 -> transactionMenu.start();
+                case 2 -> investmentMenu.start();
+                case 3 -> assetLiabilityMenu.start();
+                case 4 -> analyticsMenu.start();
+                case 9 -> {
+                    running = false;
+                    System.out.println("Goodbye.");
+                }
+                default -> System.out.println("Please select a valid option.");
+
+            }
         }
     }
 }
