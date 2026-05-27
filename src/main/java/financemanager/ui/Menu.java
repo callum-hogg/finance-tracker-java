@@ -23,4 +23,8 @@ public abstract class Menu {
     public LocalDate getDateInput() {
         return InputValidator.getValidDate(scanner);
     }
+
+    public String getStringInput() {
+        return InputValidator.getValidString(scanner);
+    }
 }

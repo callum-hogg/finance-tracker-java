@@ -20,35 +20,70 @@ public class TransactionMenu extends Menu {
     }
 
     public void start() {
-        System.out.println("Accounts:");
-        System.out.println("");
+
+        boolean running = true;
+
+        while (running) {
+            ArrayList<FinanceAccount> accounts = financeAccountManager.getAccounts();
+
+            System.out.println("Accounts:");
+            System.out.println("");
+
+            if (accounts.isEmpty()) {
+                System.out.println("No accounts found.");
+            }
+
+            for (int i = 0; i < accounts.size(); i++) {
+                System.out.println((i + 1) + ". " + accounts.get(i).getName());
+            }
+
+            System.out.println((accounts.size() + 1) + ". Add Account");
+            System.out.println((accounts.size() + 2) + ". Back");
+            System.out.print("Enter choice: ");
+
+            int choice = getIntInput();
+
+            if (choice >= 1 && choice <= accounts.size()) {
+                FinanceAccount account = accounts.get(choice + 1);
+            } else if (choice == accounts.size() + 1) {
+                addAccount();
+            } else if (choice == accounts.size() + 2) {
+                running = false;
+            } else {
+                System.out.println("Please select a valid option.");
+            }
+        }
     }
 
-    public FinanceAccount selectAccount() {
-        ArrayList<FinanceAccount> accounts = financeAccountManager.getAccounts();
+    public void addAccount() {
+        System.out.print("Enter account name: ");
+        String name = getStringInput();
 
-        if (accounts.isEmpty()) {
-            System.out.println("No accounts found.");
-            return null;
-        }
+        FinanceAccountType accountType = getAccountType();
 
-        for (int i = 0; i < accounts.size(); i++) {
-            System.out.println((i + 1) + ". " + accounts.get(i).getName());
-        }
+        System.out.print("Enter starting balance: ");
+        double balance = getDoubleInput();
 
-        System.out.println((accounts.size() + 1) + ". Add Account");
-        System.out.println((accounts.size() + 2) + ". Back");
-
-        int choice = getIntInput();
-
-        if ((choice == accounts.size() + 1) || (choice == accounts.size() + 2)) {
-            return null;
-        }
-
-        return accounts.get(choice - 1);
+        financeAccountManager.addAccount(new FinanceAccount(name, accountType, balance));
     }
 
+    public FinanceAccountType getAccountType() {
+        while(true) {
+            System.out.println("1. Current Account");
+            System.out.println("2. Savings Account");
+            System.out.print("Choose account type: ");
 
+            int input = InputValidator.getValidInt(scanner);
 
-
+            switch (input) {
+                case 1 -> {
+                    return FinanceAccountType.CURRENT_ACCOUNT;
+                }
+                case 2 -> {
+                    return FinanceAccountType.SAVINGS_ACCOUNT;
+                }
+                default -> System.out.println("Please choose a valid option.");
+            }
+        }
+    }
 }

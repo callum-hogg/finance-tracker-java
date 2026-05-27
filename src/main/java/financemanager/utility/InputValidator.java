@@ -11,7 +11,7 @@ public class InputValidator {
             try {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
+                System.out.print("Please enter a valid number: ");
             }
         }
     }
@@ -21,7 +21,7 @@ public class InputValidator {
             try {
                 return Double.parseDouble(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
+                System.out.print("Please enter a valid number: ");
             }
         }
     }
@@ -33,6 +33,17 @@ public class InputValidator {
                 return LocalDate.parse(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a valid date.");
+            }
+        }
+    }
+
+    public static String getValidString(Scanner scanner) {
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.isEmpty()) {
+                System.out.println("Input cannot be empty.");
+            } else {
+                return input.trim();
             }
         }
     }

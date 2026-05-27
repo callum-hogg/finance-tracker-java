@@ -32,6 +32,7 @@ public class MainMenu extends Menu {
             System.out.println("3. Assets and Liabilities");
             System.out.println("4. Analytics");
             System.out.println("9. Exit");
+            System.out.print("Enter choice: ");
 
             int input = getIntInput();
 
