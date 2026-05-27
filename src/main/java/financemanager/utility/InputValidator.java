@@ -1,6 +1,7 @@
 package financemanager.utility;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class InputValidator {
@@ -31,7 +32,7 @@ public class InputValidator {
             try {
                 System.out.print("Please enter date (YYYY-MM-DD): ");
                 return LocalDate.parse(scanner.nextLine());
-            } catch (NumberFormatException e) {
+            } catch (DateTimeParseException e) {
                 System.out.println("Please enter a valid date.");
             }
         }
