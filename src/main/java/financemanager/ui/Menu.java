@@ -1,8 +1,10 @@
 package financemanager.ui;
 
+import financemanager.model.FinanceAccount;
 import financemanager.utility.InputValidator;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Menu {

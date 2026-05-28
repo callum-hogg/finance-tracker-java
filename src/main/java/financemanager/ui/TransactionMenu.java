@@ -24,7 +24,7 @@ public class TransactionMenu extends Menu {
         boolean running = true;
 
         while (running) {
-            ArrayList<FinanceAccount> accounts = financeAccountManager.getAccounts();
+            ArrayList<FinanceAccount> accounts = new ArrayList<>(financeAccountManager.getAccounts());
 
             System.out.println();
             System.out.println("Accounts:");
@@ -100,7 +100,8 @@ public class TransactionMenu extends Menu {
             System.out.println("4. View Transactions");
             System.out.println("5. View Total Income");
             System.out.println("6. View Total Expense");
-            System.out.println("7. Back");
+            System.out.println("7. Close Account");
+            System.out.println("8. Back");
             System.out.print("Enter choice: ");
 
             int choice = getIntInput();
@@ -112,14 +113,18 @@ public class TransactionMenu extends Menu {
                 case 4 -> displayTransactions(account);
                 case 5 -> displayTotalIncome(account);
                 case 6 -> displayTotalExpense(account);
-                case 7 -> running = false;
+                case 7 -> {
+                    removeAccount(account);
+                    running = false;
+                }
+                case 8 -> running = false;
                 default -> System.out.println("Please choose a valid option.");
             }
         }
     }
 
     public void displayBalance(FinanceAccount account) {
-        System.out.println("Current balance is: " + account.getBalance());
+        System.out.println("Current balance is: £" + account.getBalance());
     }
 
     public void addTransaction(FinanceAccount account) {
@@ -151,7 +156,7 @@ public class TransactionMenu extends Menu {
     }
 
     public void displayTransactions(FinanceAccount account) {
-        ArrayList<Transaction> transactions = account.getTransactions();
+        ArrayList<Transaction> transactions = new ArrayList<>(account.getTransactions());
 
         if (transactions.isEmpty()) {
             System.out.println("No transactions found.");
@@ -169,18 +174,18 @@ public class TransactionMenu extends Menu {
     }
 
     public void displayTotalIncome(FinanceAccount account) {
-        System.out.println("Total income: " + account.getAccountIncome());
+        System.out.println("Total income: £" + account.getAccountIncome());
     }
 
     public void displayTotalExpense(FinanceAccount account) {
-        System.out.println("Total expense: " + account.getAccountExpense());
+        System.out.println("Total expense: £" + account.getAccountExpense());
     }
 
     public TransactionType getTransactionType() {
         while(true) {
-            System.out.println("Please choose one of the following options: ");
             System.out.println("1. Income");
             System.out.println("2. Expense");
+            System.out.print("Choose transaction type: ");
 
             int input = InputValidator.getValidInt(scanner);
 
@@ -193,6 +198,16 @@ public class TransactionMenu extends Menu {
                 }
                 default -> System.out.println("Please choose a valid option.");
             }
+        }
+    }
+
+    public void removeAccount(FinanceAccount account) {
+        boolean removed = financeAccountManager.removeAccount(account.getId());
+
+        if(removed) {
+            System.out.println("Account closed.");
+        } else {
+            System.out.println("Could not close account.");
         }
     }
 }
