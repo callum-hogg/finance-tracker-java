@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd4945fe-a35a-4d95-845a-541c56e52a45" name="Changes" comment="feat: implemented main asset &amp; liability menu." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;callum-hogg&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/callum-hogg/finance-tracker-java.git&quot;,
+    &quot;accountId&quot;: &quot;c81e10ca-5f5a-434c-b836-c867ef024981&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3COriwMIJx8If7G4iXLulyfaYNE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Callum/IdeaProjects/finance-tracker-java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Callum\IdeaProjects\finance-tracker-java\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="finance-tracker-java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="finance-tracker-java" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd4945fe-a35a-4d95-845a-541c56e52a45" name="Changes" comment="" />
+      <created>1776267588067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776267588067</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial project setup">
+      <option name="closed" value="true" />
+      <created>1776268235409</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776268235409</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: implement Transaction class with basic fields, constructor, and getters">
+      <option name="closed" value="true" />
+      <created>1776269280856</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776269280856</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: implement FinanceManager class with basic fields, constructor, getters, and ability to add transaction.">
+      <option name="closed" value="true" />
+      <created>1776271895985</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776271895985</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: implemented transaction ids and improved FinanceManager logic with transaction removal and balance features.">
+      <option name="closed" value="true" />
+      <created>1776277818729</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776277818729</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: implemented basic ui class, start menu, input validation.">
+      <option name="closed" value="true" />
+      <created>1777204736255</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777204736255</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: implemented essential ui methods and extra input validation.">
+      <option name="closed" value="true" />
+      <created>1777208523923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777208523923</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor: renamed current classes to specifically transaction managers, improved project structure for expansion.">
+      <option name="closed" value="true" />
+      <created>1778953110730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778953110730</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor: separated input validation logic from menu and ui code.">
+      <option name="closed" value="true" />
+      <created>1778958844138</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778958844138</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: implemented Investment class with fields, constructor, and getters.">
+      <option name="closed" value="true" />
+      <created>1778963610505</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1778963610505</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: added setters for Transaction and Investment classes to enable future editing.">
+      <option name="closed" value="true" />
+      <created>1779016680780</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779016680780</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: implemented multiple account management features.">
+      <option name="closed" value="true" />
+      <created>1779018562892</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779018562892</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: added Investment Account class to manage investments.">
+      <option name="closed" value="true" />
+      <created>1779026709511</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779026709511</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: added Investment Account Manager class to manage multiple investment accounts.">
+      <option name="closed" value="true" />
+      <created>1779027595219</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779027595219</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat. Added basic Liability and Asset classes with getters and setters.">
+      <option name="closed" value="true" />
+      <created>1779033557156</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779033557156</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat. Added Asset &amp; Liability Manager class with basic methods.">
+      <option name="closed" value="true" />
+      <created>1779044518531</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779044518531</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat. Added Menu ui classes and start Finance Account menu logic.">
+      <option name="closed" value="true" />
+      <created>1779742399247</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1779742399247</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Implemented basic main menu logic and submenu constructors.">
+      <option name="closed" value="true" />
+      <created>1779883812667</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1779883812667</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: started finance accounts menu with ability to add accounts.">
+      <option name="closed" value="true" />
+      <created>1779886900268</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1779886900268</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: implemented working finance account menu with multiple account support and transaction handling.">
+      <option name="closed" value="true" />
+      <created>1779902620935</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1779902620935</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: implemented working investment account menu with multiple account support and transaction handling.">
+      <option name="closed" value="true" />
+      <created>1779973678368</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1779973678368</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: implemented main asset &amp; liability menu.">
+      <option name="closed" value="true" />
+      <created>1779983543680</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1779983543680</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial project setup" />
+    <MESSAGE value="feat: implement Transaction class with basic fields, constructor, and getters" />
+    <MESSAGE value="feat: implement FinanceManager class with basic fields, constructor, getters, and ability to add transaction." />
+    <MESSAGE value="feat: implemented transaction ids and improved FinanceManager logic with transaction removal and balance features." />
+    <MESSAGE value="feat: implemented basic ui class, start menu, input validation." />
+    <MESSAGE value="feat: implemented essential ui methods and extra input validation." />
+    <MESSAGE value="refactor: renamed current classes to specifically transaction managers, improved project structure for expansion." />
+    <MESSAGE value="refactor: separated input validation logic from menu and ui code." />
+    <MESSAGE value="feat: implemented Investment class with fields, constructor, and getters." />
+    <MESSAGE value="feat: added setters for Transaction and Investment classes to enable future editing." />
+    <MESSAGE value="feat: implemented multiple account management features." />
+    <MESSAGE value="feat: added Investment Account class to manage investments." />
+    <MESSAGE value="feat: added Investment Account Manager class to manage multiple investment accounts." />
+    <MESSAGE value="feat. Added basic Liability and Asset classes with getters and setters." />
+    <MESSAGE value="feat. Added Asset &amp; Liability Manager class with basic methods." />
+    <MESSAGE value="feat. Added Menu ui classes and start Finance Account menu logic." />
+    <MESSAGE value="feat: Implemented basic main menu logic and submenu constructors." />
+    <MESSAGE value="feat: started finance accounts menu with ability to add accounts." />
+    <MESSAGE value="feat: implemented working finance account menu with multiple account support and transaction handling." />
+    <MESSAGE value="feat: implemented working investment account menu with multiple account support and transaction handling." />
+    <MESSAGE value="feat: implemented main asset &amp; liability menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented main asset &amp; liability menu." />
+  </component>
+</project>
