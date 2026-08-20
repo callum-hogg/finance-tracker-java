@@ -1,5 +1,11 @@
 package financemanager.service;
 
+import java.time.LocalDate;
+
+import financemanager.enums.TransactionType;
+import financemanager.model.Transaction;
+import financemanager.model.FinanceAccount;
+
 public class AnalyticsService {
     private FinanceAccountManager financeAccountManager;
     private InvestmentAccountManager investmentAccountManager;
@@ -14,4 +20,21 @@ public class AnalyticsService {
     public double calculateNetWorth() {
         return financeAccountManager.getTotalBalance() + investmentAccountManager.getTotalValue() + assetLiabilityManager.getTotalAssetValue() - assetLiabilityManager.getTotalLiabilityValue();
     }
+
+    public double getMonthlySpend(LocalDate month) {
+        double total = 0;
+
+        for (FinanceAccount financeAccount : financeAccountManager.getAccounts()) {
+
+            for (Transaction transaction : financeAccount.getTransactions()) {
+
+                if (transaction.getType() == TransactionType.EXPENSE && transaction.getDate().getMonth() == month.getMonth() && transaction.getDate().getYear() == month.getYear()) {
+                    total += total;
+                }
+            }
+        }
+        return total;
+    }
+
+
 }
