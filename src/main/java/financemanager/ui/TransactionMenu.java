@@ -41,14 +41,14 @@ public class TransactionMenu extends Menu {
             System.out.println((accounts.size() + 2) + ". Back");
             System.out.print("Enter choice: ");
 
-            int choice = getIntInput();
+            int input = getIntInput();
 
-            if (choice >= 1 && choice <= accounts.size()) {
-                FinanceAccount account = accounts.get(choice - 1);
+            if (input >= 1 && input <= accounts.size()) {
+                FinanceAccount account = accounts.get(input - 1);
                 accountMenu(account);
-            } else if (choice == accounts.size() + 1) {
+            } else if (input == accounts.size() + 1) {
                 addAccount();
-            } else if (choice == accounts.size() + 2) {
+            } else if (input == accounts.size() + 2) {
                 running = false;
             } else {
                 System.out.println("Please select a valid option.");

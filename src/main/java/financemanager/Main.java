@@ -1,5 +1,6 @@
 package financemanager;
 
+import financemanager.service.AnalyticsService;
 import financemanager.service.AssetLiabilityManager;
 import financemanager.service.FinanceAccountManager;
 import financemanager.service.InvestmentAccountManager;
@@ -14,7 +15,8 @@ public class Main {
         FinanceAccountManager financeManager = new FinanceAccountManager();
         InvestmentAccountManager investmentManager = new InvestmentAccountManager();
         AssetLiabilityManager assetManager = new AssetLiabilityManager();
-        MainMenu mainMenu = new MainMenu(scanner, financeManager, investmentManager, assetManager);
+        AnalyticsService analyticsService = new AnalyticsService(financeManager, investmentManager, assetManager);
+        MainMenu mainMenu = new MainMenu(scanner, financeManager, investmentManager, assetManager, analyticsService);
         mainMenu.start();
     }
 }

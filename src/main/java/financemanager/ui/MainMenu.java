@@ -1,5 +1,6 @@
 package financemanager.ui;
 
+import financemanager.service.AnalyticsService;
 import financemanager.service.AssetLiabilityManager;
 import financemanager.service.FinanceAccountManager;
 import financemanager.service.InvestmentAccountManager;
@@ -13,13 +14,13 @@ public class MainMenu extends Menu {
     private final AnalyticsMenu analyticsMenu;
 
 
-    public MainMenu(Scanner scanner, FinanceAccountManager financeManager, InvestmentAccountManager investmentManager, AssetLiabilityManager assetManager) {
+    public MainMenu(Scanner scanner, FinanceAccountManager financeManager, InvestmentAccountManager investmentManager, AssetLiabilityManager assetManager, AnalyticsService analyticsService) {
         super(scanner);
 
         this.transactionMenu = new TransactionMenu(scanner, financeManager);
         this.investmentMenu = new InvestmentMenu(scanner, investmentManager);
         this.assetLiabilityMenu = new AssetLiabilityMenu(scanner, assetManager);
-        this.analyticsMenu = new AnalyticsMenu(scanner, financeManager, investmentManager, assetManager);
+        this.analyticsMenu = new AnalyticsMenu(scanner, analyticsService);
     }
 
     public void start() {
@@ -47,7 +48,6 @@ public class MainMenu extends Menu {
                     System.out.println("Goodbye.");
                 }
                 default -> System.out.println("Please select a valid option.");
-
             }
         }
     }

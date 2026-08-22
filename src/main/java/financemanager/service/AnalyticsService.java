@@ -21,6 +21,22 @@ public class AnalyticsService {
         return financeAccountManager.getTotalBalance() + investmentAccountManager.getTotalValue() + assetLiabilityManager.getTotalAssetValue() - assetLiabilityManager.getTotalLiabilityValue();
     }
 
+    public double getTotalFinanceAccountValue() {
+        return financeAccountManager.getTotalBalance();
+    }
+
+    public double getTotalInvestmentValue() {
+        return investmentAccountManager.getTotalValue();
+    }
+
+    public double getTotalAssetValue() {
+        return assetLiabilityManager.getTotalAssetValue();
+    }
+
+    public double getTotalLiabilityValue() {
+        return assetLiabilityManager.getTotalLiabilityValue();
+    }
+
     public double getMonthlySpend(LocalDate month) {
         double total = 0;
 

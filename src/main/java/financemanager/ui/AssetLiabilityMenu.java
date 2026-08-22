@@ -2,12 +2,9 @@ package financemanager.ui;
 
 import financemanager.enums.AssetType;
 import financemanager.enums.LiabilityType;
-import financemanager.enums.TransactionType;
 import financemanager.model.Asset;
-import financemanager.model.InvestmentAccount;
 import financemanager.model.Liability;
 import financemanager.service.AssetLiabilityManager;
-import financemanager.service.FinanceAccountManager;
 import financemanager.utility.InputValidator;
 
 import java.util.ArrayList;
@@ -48,18 +45,18 @@ public class AssetLiabilityMenu extends Menu {
             System.out.println(assets.size() + liabilities.size() + 2 + ". Add Liability");
             System.out.println(assets.size() + liabilities.size() + 3 + ". Back");
 
-            int choice = getIntInput();
+            int input = getIntInput();
 
-            if (choice >= 1 && choice <= assets.size()) {
-                Asset asset = assets.get(choice - 1);
+            if (input >= 1 && input <= assets.size()) {
+                Asset asset = assets.get(input - 1);
 
-            } else if (choice <= assets.size() + liabilities.size()) {
-                Liability liability = liabilities.get(choice - assets.size() - 1);
-            } else if (choice == assets.size() + liabilities.size() + 1) {
+            } else if (input <= assets.size() + liabilities.size()) {
+                Liability liability = liabilities.get(input - assets.size() - 1);
+            } else if (input == assets.size() + liabilities.size() + 1) {
                 addAsset();
-            } else if (choice == assets.size() + liabilities.size() + 2) {
+            } else if (input == assets.size() + liabilities.size() + 2) {
                 addLiability();
-            } else if (choice == assets.size() + liabilities.size() + 3) {
+            } else if (input == assets.size() + liabilities.size() + 3) {
                 running = false;
             } else {
                 System.out.println("Please choose a valid option.");
